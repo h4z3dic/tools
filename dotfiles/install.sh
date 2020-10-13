@@ -74,7 +74,12 @@ alias vimdiff="nvim -d"
 EOF
 
 sudo apt install -y cmake exuberant-ctags cscope global ack-grep
-sudo apt install ncurses-term
+sudo apt install -y ncurses-term
+
+sudo apt install -y tmux
+mv $SCRIPT_PATH/tmux ~/.tmux
+ln -sf ~/.tmux/tmux.conf ~/.tmux.conf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt install -y nodejs
